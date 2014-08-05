@@ -2,10 +2,16 @@ package net.zhuoweizhang.makeshift.java.awt.image;
 
 import android.graphics.Bitmap;
 
+import net.zhuoweizhang.makeshift.java.awt.Graphics;
+
 public class BufferedImage {
 	private Bitmap bitmap;
 	public BufferedImage(Bitmap bitmap) {
 		this.bitmap = bitmap;
+	}
+
+	public BufferedImage(int width, int height, int imageType) {
+		this.bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
 	}
 
 	public int getWidth() {
@@ -22,5 +28,9 @@ public class BufferedImage {
 		}
 		bitmap.getPixels(rgbArray, offset, scansize, startX, startY, w, h);
 		return rgbArray;
+	}
+
+	public Graphics getGraphics() {
+		return new Graphics();
 	}
 }

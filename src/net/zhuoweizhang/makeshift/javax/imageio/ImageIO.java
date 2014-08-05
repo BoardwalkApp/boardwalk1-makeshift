@@ -1,6 +1,7 @@
 package net.zhuoweizhang.makeshift.javax.imageio;
 
 import java.io.*;
+import java.net.URL;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
@@ -17,6 +18,13 @@ public class ImageIO {
 
 	public static BufferedImage read(File input) throws IOException {
 		Bitmap bmp = BitmapFactory.decodeFile(input.getAbsolutePath());
+		return makeBufferedImage(bmp);
+	}
+
+	public static BufferedImage read(URL input) throws IOException {
+		InputStream is = input.openStream();
+		Bitmap bmp = BitmapFactory.decodeStream(is);
+		is.close();
 		return makeBufferedImage(bmp);
 	}
 
