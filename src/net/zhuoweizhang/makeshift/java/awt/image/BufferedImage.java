@@ -3,8 +3,9 @@ package net.zhuoweizhang.makeshift.java.awt.image;
 import android.graphics.Bitmap;
 
 import net.zhuoweizhang.makeshift.java.awt.Graphics;
+import net.zhuoweizhang.makeshift.java.awt.Image;
 
-public class BufferedImage {
+public class BufferedImage extends Image implements RenderedImage {
 	private Bitmap bitmap;
 	public BufferedImage(Bitmap bitmap) {
 		this.bitmap = bitmap;
@@ -32,5 +33,9 @@ public class BufferedImage {
 
 	public Graphics getGraphics() {
 		return new Graphics();
+	}
+
+	public void setRGB(int startX, int startY, int w, int h, int[] rgbArray, int offset, int scansize) {
+		System.out.println("Setting RGB stub");
 	}
 }

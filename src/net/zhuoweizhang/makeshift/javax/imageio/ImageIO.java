@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
 import net.zhuoweizhang.makeshift.java.awt.image.BufferedImage;
+import net.zhuoweizhang.makeshift.java.awt.image.RenderedImage;
 
 public class ImageIO {
 	public static void setUseCache(boolean set) {
@@ -31,5 +32,10 @@ public class ImageIO {
 	private static BufferedImage makeBufferedImage(Bitmap bmp) {
 		// Every one of our BufferedImages is backed with an Android Bitmap
 		return new BufferedImage(bmp);
+	}
+
+	public static boolean write(RenderedImage im, String formatName, File output) {
+		System.out.println("ImageIO.write stub " + output);
+		return true;
 	}
 }
