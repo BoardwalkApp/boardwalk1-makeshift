@@ -32,10 +32,18 @@ public class BufferedImage extends Image implements RenderedImage {
 	}
 
 	public Graphics getGraphics() {
-		return new Graphics();
+		return new Graphics(this);
 	}
 
 	public void setRGB(int startX, int startY, int w, int h, int[] rgbArray, int offset, int scansize) {
 		System.out.println("Setting RGB stub");
+	}
+
+	public WritableRaster getRaster() {
+		return new WritableRaster(this);
+	}
+
+	public Bitmap getAndroidBitmap() {
+		return this.bitmap;
 	}
 }
