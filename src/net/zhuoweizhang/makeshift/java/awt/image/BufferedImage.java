@@ -6,6 +6,7 @@ import net.zhuoweizhang.makeshift.java.awt.Graphics;
 import net.zhuoweizhang.makeshift.java.awt.Image;
 
 public class BufferedImage extends Image implements RenderedImage {
+	public static final int TYPE_INT_ARGB = 2;
 	private Bitmap bitmap;
 	public BufferedImage(Bitmap bitmap) {
 		this.bitmap = bitmap;
@@ -45,5 +46,9 @@ public class BufferedImage extends Image implements RenderedImage {
 
 	public Bitmap getAndroidBitmap() {
 		return this.bitmap;
+	}
+
+	public int getType() {
+		return TYPE_INT_ARGB;
 	}
 }
