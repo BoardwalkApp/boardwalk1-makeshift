@@ -3,6 +3,7 @@ package net.zhuoweizhang.makeshift.java.awt.image;
 import android.graphics.Bitmap;
 
 import net.zhuoweizhang.makeshift.java.awt.Graphics;
+import net.zhuoweizhang.makeshift.java.awt.Graphics2D;
 import net.zhuoweizhang.makeshift.java.awt.Image;
 
 public class BufferedImage extends Image implements RenderedImage {
@@ -33,7 +34,11 @@ public class BufferedImage extends Image implements RenderedImage {
 	}
 
 	public Graphics getGraphics() {
-		return new Graphics(this);
+		return new Graphics2D(this);
+	}
+
+	public Graphics2D createGraphics() {
+		return new Graphics2D(this);
 	}
 
 	public void setRGB(int startX, int startY, int w, int h, int[] rgbArray, int offset, int scansize) {
